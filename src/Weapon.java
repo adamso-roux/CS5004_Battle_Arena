@@ -6,4 +6,9 @@ public class Weapon {
         this.name = name;
         this.strength = strength;
     }
+
+    @Override
+    public String toString(){
+        return String.format("[Weapon Name: %s, Strength: %d]", this.name, this.strength);
+    }
 }
