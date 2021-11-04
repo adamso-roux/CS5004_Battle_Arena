@@ -17,8 +17,9 @@ public class Character implements CharacterInterface {
         return (double)((Math.random() * (strength - 1)) + 1);
     }
 
-    public void takeDamage(int damage)
+    public void takeDamage()
     {
+        double damage = attack();
         setHitPoints(hitPoints - damage);
     }
 
