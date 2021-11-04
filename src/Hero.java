@@ -12,6 +12,12 @@ public class Hero extends Character{
     // attack is based on the weapon
     public double attack(boolean special) {
         if (weapon instanceof Magic) {
+            if (special == true) {
+                mana -= 2;
+            }
+            else {
+                mana--;
+            }
             if (mana == 0.0) {
                 return 0.0;
             }
