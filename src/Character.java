@@ -44,6 +44,9 @@ public class Character implements CharacterInterface {
 
     public void setHitPoints(double hitPoints) {
         this.hitPoints = hitPoints;
+        if (hitPoints <= 100) {
+            alive = false;
+        }
     }
 
     public double getStrength() {
