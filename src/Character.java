@@ -17,6 +17,11 @@ public class Character implements CharacterInterface {
         return (double)((Math.random() * (strength - 1)) + 1);
     }
 
+    public void takeDamage(int damage)
+    {
+        setHitPoints(hitPoints - damage);
+    }
+
     public String toString() {
         return "Name: " + name
                 + "\nHit Points: " + hitPoints
