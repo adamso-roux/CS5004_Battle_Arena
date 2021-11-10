@@ -40,6 +40,7 @@ public class Character implements CharacterInterface {
         this.name = name;
     }
     public void setHitPoints(double hitPoints) {
+
         if (hitPoints < 0) { // floor the hitPoints if they are less than 0
             hitPoints = 0;
         }

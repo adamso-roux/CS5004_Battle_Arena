@@ -22,12 +22,17 @@ public class BattleArena {
 
         //LOOP WHILE size of heroes or badguys is greater than 0:
 
-        while((this.heroes.size() > 0) || (this.badguys.size() > 0)) {
-            //get random index for a hero
-            //get random index for a bad guy
-            int hero_index = (int)Math.floor(Math.random() * this.heroes.size());
-            int badguy_index = (int)Math.floor(Math.random() * this.heroes.size());
+        int round_number = 0;
 
+        while((this.heroes.size() > 0) && (this.badguys.size() > 0)) {
+
+            Random rand = new Random();
+
+            int hero_index = rand.nextInt(this.heroes.size());//(int)Math.floor(Math.random() * this.heroes.size());
+
+            int badguy_index = rand.nextInt(this.badguys.size());//(int)Math.floor(Math.random() * this.heroes.size());
+
+            System.out.println("\nBEGIN ROUND " + round_number++);
             int result = two_v_two_FIGHT(hero_index, badguy_index);
 
             //the result is the index of the player who lost:
@@ -39,27 +44,24 @@ public class BattleArena {
                 this.badguys.remove(badguy_index);
                 this.heroes.get(hero_index).revive();
             }
-
         }
-
-
 
     }
 
     public int two_v_two_FIGHT(int hero_index, int badguy_index){
 
 
-        System.out.println("FIGHT");
         Random rand = new Random();
 
         Character c1 = heroes.get(hero_index);
         Character c2 = badguys.get(badguy_index);
 
+        System.out.println(String.format("%s VERSUS %s", c1.getName(), c2.getName()));
         double damagec1 = rand.nextInt((int) c1.getStrength());
         double damagec2 = rand.nextInt((int) c2.getStrength());
 
 
-        while(c1.isAlive()  || c2.isAlive()) {
+        while(c1.isAlive()  && c2.isAlive()) {
             System.out.println(c1.getName() + " Strength: " + c1.getHitPoints() + " " + c2.getName() + " Strength: " + c2.getHitPoints());
             System.out.println(c1.getName() + " Attacks " + c2.getName());
             c2.takeDamage(damagec2);
