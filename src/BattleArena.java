@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.lang.Math;
+import java.util.Random;
 
 
 public class BattleArena {
@@ -21,44 +22,26 @@ public class BattleArena {
 
         //LOOP WHILE size of heroes or badguys is greater than 0:
 
-        //get random index for a hero
-        //get random index for a bad guy
-        int hero_index = 0;// = random number from the size of hero linked list
-        int badguy_index = 0;// = random number from the size of hero linked list
+        while((this.heroes.size() > 0) || (this.badguys.size() > 0)) {
+            //get random index for a hero
+            //get random index for a bad guy
+            int hero_index = (int)Math.floor(Math.random() * this.heroes.size());
+            int badguy_index = (int)Math.floor(Math.random() * this.heroes.size());
 
-        int result = two_v_two_FIGHT(hero_index, badguy_index);
+            int result = two_v_two_FIGHT(hero_index, badguy_index);
 
-        //the result is the index of the player who lost:
-        if(result == 0){this.heroes.remove(hero_index);}
-        if(result == 1){this.badguys.remove(badguy_index);}
+            //the result is the index of the player who lost:
+            if (result == 0) {
+                this.heroes.remove(hero_index);
+                this.badguys.get(badguy_index).revive();
+            }
+            if (result == 1) {
+                this.badguys.remove(badguy_index);
+                this.heroes.get(hero_index).revive();
+            }
 
-        //rest the health of the player who is still alive:
-        System.out.println("FIGHT");
-    	Random rand = new Random();
-    	 
-    	Character c1 = heroes.getFirst();
-    	Character c2 = badguys.getFirst();
-         
-         double damagec1 = (double) rand.nextInt((int) c1.getStrength());
-         double damagec2 = (double) rand.nextInt((int) c2.getStrength());
-         
-         
-         while(c1.isAlive()  && c2.isAlive())
-         {	
-         	 System.out.println(c1.getName() + " Strength: " + c1.getHitPoints() + " " + c2.getName() + " Strength: " + c2.getHitPoints());
-             System.out.println(c1.getName() + " Attacks " + c2.getName());
-             c2.takeDamage(damagec2);
-             System.out.println(c1.getName() + " Strength: " + c1.getHitPoints() + " " + c2.getName() + " Strength: " + c2.getHitPoints());
-             System.out.println(c2.getName() + " Attacks " + c1.getName());
-             c1.takeDamage(damagec1); 
-             
-             if(c1.isAlive() == false) {
-             	System.out.println(c2.getName() + " Wins");
-             }
-             
-             if(c2.isAlive() == false) {
-             	System.out.println(c1.getName() + " Wins");
-             }
+        }
+
 
 
     }
@@ -66,11 +49,36 @@ public class BattleArena {
     public int two_v_two_FIGHT(int hero_index, int badguy_index){
 
 
+        System.out.println("FIGHT");
+        Random rand = new Random();
+
+        Character c1 = heroes.get(hero_index);
+        Character c2 = badguys.get(badguy_index);
+
+        double damagec1 = rand.nextInt((int) c1.getStrength());
+        double damagec2 = rand.nextInt((int) c2.getStrength());
+
+
+        while(c1.isAlive()  || c2.isAlive()) {
+            System.out.println(c1.getName() + " Strength: " + c1.getHitPoints() + " " + c2.getName() + " Strength: " + c2.getHitPoints());
+            System.out.println(c1.getName() + " Attacks " + c2.getName());
+            c2.takeDamage(damagec2);
+            System.out.println(c1.getName() + " Strength: " + c1.getHitPoints() + " " + c2.getName() + " Strength: " + c2.getHitPoints());
+            System.out.println(c2.getName() + " Attacks " + c1.getName());
+            c1.takeDamage(damagec1);
+
+            if (c1.isAlive() == false) {
+                System.out.println(c2.getName() + " Wins");
+            }
+
+            if (c2.isAlive() == false) {
+                System.out.println(c1.getName() + " Wins");
+            }
+        }
         if(!this.heroes.get(hero_index).isAlive()) return 0;
 
-        else if(!this.badguys.get(badguy_index).isAlive()) return 1;
+        else return 1;
 
-        return -1;
     }
 
     public void AnnounceContestants(){
@@ -106,22 +114,22 @@ public class BattleArena {
         System.out.println(this.winner);
 
     }
-    public double getRandomAttack(CharacterInterface contestant) {
-
-        if (contestant instanceof BadGuy) {
-            //attack function call for the badguy
-        }
-
-
-        if (contestant instanceof Hero) {
-            //hand of god roll:
-            int handofgod = (int) Math.floor(Math.random() * 100) % 2;
-
-            //attack function call for the hero
-
-        }
-        return 0d;
-    }
+//    public double getRandomAttack(Character contestant) {
+//
+//        if (contestant instanceof BadGuy) {
+//            //attack function call for the badguy
+//        }
+//
+//
+//        if (contestant instanceof Hero) {
+//            //hand of god roll:
+//            int handofgod = (int) Math.floor(Math.random() * 100) % 2;
+//
+//            //attack function call for the hero
+//
+//        }
+//        return 0d;
+//    }
 
 
 }

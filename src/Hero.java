@@ -62,4 +62,9 @@ public class Hero extends Character{
         return this.weapon.attack(special);
     }
 
+    public void revive(){
+        super.revive();
+        this.mana = 10;
+    }
 }
+

@@ -1,13 +1,13 @@
 /**
  * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
- * Abstract Weapon Class to reduce the reuse of code in each of the 
+ * Abstract Weapon Class to reduce the reuse of code in each of the
  * three Weapon child classes.
  */
 
 public abstract class Weapon {
-		
-	//fields
-	private String name;
+
+    //fields
+    private String name;
     private double strength;
     private int durability;
 
@@ -23,36 +23,36 @@ public abstract class Weapon {
         this.durability = durability;
     }
 
-   /**
-    * Sets a Weapon's durability
-    * @param durability is the Weapon's new durability
-    */
-   public void setDurability(int durability)
-   {
-	   this.durability = durability;
-   }
-   
-   /**
-    * Gets a Weapon's durability
-    * @return the weapon's durability
-    */
-   public int getDurability()
-   {
-	   return this.durability;
-   }
-   
-   public abstract double attack(boolean special);
-   
-   
-    
-    
+    /**
+     * Sets a Weapon's durability
+     * @param durability is the Weapon's new durability
+     */
+    public void setDurability(int durability)
+    {
+        this.durability = durability;
+    }
 
-   @Override
-   /**
-    * toString Override 
-    * @return the Weapon's characteristics in String format
-    */
+    /**
+     * Gets a Weapon's durability
+     * @return the weapon's durability
+     */
+    public int getDurability()
+    {
+        return this.durability;
+    }
+
+    public abstract double attack(boolean special);
+
+
+
+
+
+    @Override
+    /**
+     * toString Override
+     * @return the Weapon's characteristics in String format
+     */
     public String toString(){
-        return String.format("[Weapon Name: %s, Strength: %d, Durability: %d]", this.name, this.strength, this.durability);
+        return String.format("[Weapon Name: %s, Strength: %s, Durability: %s]", this.name, this.strength, this.durability);
     }
 }

@@ -70,9 +70,8 @@ public class Character implements CharacterInterface {
     /**
      * Decrement the hitPoints based on the attack power
      */
-    public void takeDamage()
+    public void takeDamage(double damage)
     {
-        double damage = attack();
         setHitPoints(hitPoints - damage);
     }
 
@@ -81,4 +80,11 @@ public class Character implements CharacterInterface {
                 + "\nHit Points: " + hitPoints
                 + "\nStrength: " + strength;
     }
+
+    public void revive(){
+        this.alive = true;
+        this.hitPoints = 100;
+        this.strength = 25;
+    }
 }
+

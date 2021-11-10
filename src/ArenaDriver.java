@@ -3,17 +3,23 @@ import java.util.LinkedList;
 public class ArenaDriver {
     public static void main(String[] args){
         //Create our list of heroes and bad guys:
-        LinkedList<CharacterInterface>  heroes = new LinkedList<CharacterInterface>();
-        LinkedList<CharacterInterface>  badguys = new LinkedList<CharacterInterface>();
+        LinkedList<Character>  heroes = new LinkedList<Character>();
+        LinkedList<Character>  badguys = new LinkedList<Character>();
 
         //Populate our rack of weapons:
         LinkedList<Weapon> weaponRack = ArenaDriver.getWeaponRack();
-        Character oliver = new Character("Oliver", 0, 0);
+        BadGuy oliver = new BadGuy("Oliver", 0, 0);
         Hero drG = new Hero("Dr.G", 1000, 1000000, 10);
 
         //add some contestants:
-        heroes.add(oliver);
-        badguys.add(drG);
+        heroes.add(drG);
+        badguys.add(oliver);
+        heroes.add(drG);
+        badguys.add(oliver);
+        heroes.add(drG);
+        badguys.add(oliver);
+        heroes.add(drG);
+        badguys.add(oliver);
 
         //The basic structure of the Arena function calls:
         BattleArena ThunderDome = new BattleArena(heroes, badguys, weaponRack);
