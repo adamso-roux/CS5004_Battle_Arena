@@ -40,6 +40,6 @@ public abstract class Weapon {
     * @return the Weapon's characteristics in String format
     */
     public String toString(){
-        return String.format("[Weapon Name: %s, Strength: %d, Durability: %d]", this.name, this.strength, this.durability);
+        return String.format("[Weapon Name: %s, Strength: %s, Durability: %s]", this.name, this.strength, this.durability);
     }
 }
