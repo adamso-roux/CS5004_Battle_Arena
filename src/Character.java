@@ -10,6 +10,7 @@ public class Character implements CharacterInterface {
         this.name = name;
         this.hitPoints = hp;
         this.strength = strength;
+        this.alive = true;
     }
 
     public String getName() {
