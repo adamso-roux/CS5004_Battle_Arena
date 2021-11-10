@@ -1,4 +1,11 @@
-import java.util.Random;
+/**
+ * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
+ * A character has a name, hitPoints, strength, and an alive status
+ *
+ * Author: Bailee Bartash
+ * Date: 11/4/21
+ * Revised: 11/10/21
+ */
 
 public class Character implements CharacterInterface {
     private String name;
@@ -13,29 +20,27 @@ public class Character implements CharacterInterface {
         this.alive = true;
     }
 
+    // getters
     public String getName() {
         return name;
     }
-
     public double getHitPoints() {
         return hitPoints;
     }
-
     public double getStrength() {
         return strength;
     }
-
     public boolean isAlive() {
         return alive;
     }
 
+    // setters
     public void setName(String name) {
         this.name = name;
     }
-
     public void setHitPoints(double hitPoints) {
         if (hitPoints < 0) {
-            hitPoints=0;
+            hitPoints = 0;
         }
         if(hitPoints > 999) {
             hitPoints = 999;
@@ -45,11 +50,9 @@ public class Character implements CharacterInterface {
         }
         this.hitPoints = hitPoints;
     }
-
     public void setStrength(double strength) {
         this.strength = strength;
     }
-
     public void setAlive(boolean alive) {
         this.alive = alive;
     }

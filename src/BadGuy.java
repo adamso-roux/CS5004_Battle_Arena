@@ -1,3 +1,11 @@
+/**
+ * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
+ * A bad guy is a character who says a catch phrase when attacking
+ *
+ * Author: Bailee Bartash
+ * Date: 11/4/21
+ * Revised: 11/10/21
+ */
 public class BadGuy extends Character{
 
     private String[] phrase = {

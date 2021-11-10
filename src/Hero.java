@@ -1,3 +1,11 @@
+/**
+ * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
+ * A hero has the ability to hold a weapon and mana
+ *
+ * Author: Bailee Bartash
+ * Date: 11/4/21
+ * Revised: 11/10/21
+ */
 public class Hero extends Character{
 
     private double mana;
