@@ -8,6 +8,12 @@
  */
 public class BadGuy extends Character{
 
+    //making a constructor that matches the super:
+    public BadGuy(String name, double hp, double strength) {
+        super(name, hp, strength);
+    }
+
+    // five random catch phrases that a villian could say
     private String[] phrase = {
             "Mwahahahaha!",
             "You've failed the synthesis!",
@@ -16,11 +22,10 @@ public class BadGuy extends Character{
             "Luke, I am your father."
     };
 
-    //making a constructor that matches the super:
-    public BadGuy(String name, double hp, double strength) {
-        super(name, hp, strength);
-    }
-
+    /**
+     * The villian says a random catch phrase while attacking
+     * @return a random double based on the character's strength, like a general character
+     */
     @Override
     public double attack() {
         System.out.println(this.phrase[(int)(Math.random() * (4 - 0) + 0)]);

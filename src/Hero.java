@@ -7,7 +7,6 @@
  * Revised: 11/10/21
  */
 public class Hero extends Character{
-
     private double mana;
     private Weapon weapon;
 
@@ -33,12 +32,19 @@ public class Hero extends Character{
         this.weapon = weapon;
     }
 
+    // include the hero's mana in the character information
     @Override
     public String toString() {
         return super.toString() + "\nMana: " + mana;
     }
 
-    // attack is based on the weapon
+    /**
+     * A hero's attack is based on their weapon. If the weapon has no more durability,
+     * then the attack method calls the general character's attack. If the weapon is magic,
+     * the loss of mana is greater
+     * @param special indicates that the attack has been made with a weapon
+     * @return the attack with a weapon
+     */
     public double attack(boolean special) {
         if(this.weapon.getDurability() == 0){
             return this.attack();

@@ -13,6 +13,7 @@ public class Character implements CharacterInterface {
     private double strength;
     private boolean alive;
 
+    // a general constructor for all of the private fields
     public Character(String name, double hp, double strength){
         this.name = name;
         this.hitPoints = hp;
@@ -39,13 +40,13 @@ public class Character implements CharacterInterface {
         this.name = name;
     }
     public void setHitPoints(double hitPoints) {
-        if (hitPoints < 0) {
+        if (hitPoints < 0) { // floor the hitPoints if they are less than 0
             hitPoints = 0;
         }
-        if(hitPoints > 999) {
+        if(hitPoints > 999) { // hit the ceiling if the hitPoints are greater than 999
             hitPoints = 999;
         }
-        if (hitPoints == 0) {
+        if (hitPoints == 0) { // if the hitPoints are 0, the character is dead
             alive = false;
         }
         this.hitPoints = hitPoints;
@@ -57,11 +58,18 @@ public class Character implements CharacterInterface {
         this.alive = alive;
     }
 
+    /**
+     * Determine the attack power of a character
+     * @return a random double based on the character's strength
+     */
     @Override
     public double attack() {
         return (double)((Math.random() * (strength - 1)) + 1);
     }
 
+    /**
+     * Decrement the hitPoints based on the attack power
+     */
     public void takeDamage()
     {
         double damage = attack();
