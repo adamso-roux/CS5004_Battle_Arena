@@ -78,8 +78,8 @@ public class Character implements CharacterInterface {
 
     public String toString() {
         return "Name: " + name
-                + "\nHit Points: " + hitPoints
-                + "\nStrength: " + strength;
+                + "\nHit Points: " + Math.floor(hitPoints)
+                + "\nStrength: " + Math.floor(strength);
     }
 
     public void revive(){

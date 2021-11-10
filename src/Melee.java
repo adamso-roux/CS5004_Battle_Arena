@@ -18,7 +18,7 @@ public class Melee extends Weapon{
 
     public double attack(boolean special)
     {
-        if(this.durability == 0)
+        if(this.durability <= 0)
         {
             return 0;
         }

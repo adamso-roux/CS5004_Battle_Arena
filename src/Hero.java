@@ -14,6 +14,7 @@ public class Hero extends Character{
     public Hero(String name, double hp, double strength, double mana) {
         super(name, hp, strength);
         this.mana = mana;
+        this.weapon = new Magic("", 1, 1);
     }
 
     // getters
@@ -46,7 +47,7 @@ public class Hero extends Character{
      * @return the attack with a weapon
      */
     public double attack(boolean special) {
-        if(this.weapon.getDurability() == 0){
+        if(this.weapon.getDurability() <= 0){
             return this.attack();
         }
         if (weapon instanceof Magic) {
@@ -55,7 +56,7 @@ public class Hero extends Character{
             } else {
                 mana--;
             }
-            if(mana == 0){
+            if(mana <= 0){
                 return 0.0;
             }
         }

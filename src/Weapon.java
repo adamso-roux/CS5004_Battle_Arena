@@ -41,10 +41,7 @@ public abstract class Weapon {
         return this.durability;
     }
 
-    public abstract double attack(boolean special);
-
-
-
+    public double attack(boolean special){return 1.0;};
 
 
     @Override

@@ -13,7 +13,7 @@ public class BadGuy extends Character{
         super(name, hp, strength);
     }
 
-    public double badGuyAttack() {
+    public double attack() {
         System.out.println(this.phrase[(int)(Math.random() * (4 - 0) + 0)]);
         return (double)((Math.random() * (super.getStrength() - 1)) + 1);
     }
