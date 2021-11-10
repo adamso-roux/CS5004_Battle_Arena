@@ -59,7 +59,7 @@ public class Hero extends Character{
                 return 0.0;
             }
         }
-        return this.weapon.attack();
+        return this.weapon.attack(special);
     }
 
 }
