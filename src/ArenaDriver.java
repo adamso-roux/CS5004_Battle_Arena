@@ -21,17 +21,13 @@ public class ArenaDriver {
         ThunderDome.FIGHT();
         ThunderDome.AnnounceWinner();
 
-
-
     }
 
     public static LinkedList<Weapon> getWeaponRack() {
         LinkedList<Weapon> weaponRack = new LinkedList<Weapon>();
-        weaponRack.add(new Weapon("a", 10));
-        weaponRack.add(new Weapon("b", 10));
-        weaponRack.add(new Weapon("c", 10));
-        weaponRack.add(new Weapon("d", 10));
-        weaponRack.add(new Weapon("e", 10));
+        weaponRack.add(new Melee("a", 10, 10));
+        weaponRack.add(new Magic("b", 10, 10));
+        weaponRack.add(new Ranged("c", 10, 10));
 
         return weaponRack;
     }

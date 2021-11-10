@@ -2,7 +2,7 @@ import java.util.Random;
 
 
 public class Melee extends Weapon{
-	private String name;
+    private String name;
     private double strength;
     private int durability;
 
@@ -14,26 +14,26 @@ public class Melee extends Weapon{
     public String toString(){
         return super.toString();
     }
-    
-    
+
+
     public double attack(boolean special)
     {
-    	if(this.durability == 0)
-    	{
-    		return 0;
-    	}
-    	
-    	if(special)
-    	{
-    		this.setDurability(0);
-    		return this.strength;
-    	}
-    	else
-    	{
-    		this.setDurability(this.durability-2);
-    		Random r1 = new Random();
-    		return r1.nextDouble()*this.strength; 
-    	}
-    	
+        if(this.durability == 0)
+        {
+            return 0;
+        }
+
+        if(special)
+        {
+            this.setDurability(0);
+            return this.strength;
+        }
+        else
+        {
+            this.setDurability(this.durability-2);
+            Random r1 = new Random();
+            return r1.nextDouble()*this.strength;
+        }
+
     }
 }

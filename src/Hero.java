@@ -11,14 +11,16 @@ public class Hero extends Character{
 
     // attack is based on the weapon
     public double attack(boolean special) {
+        if(this.weapon.getDurability() == 0){
+            return this.attack();
+        }
         if (weapon instanceof Magic) {
-            if (special == true) {
-                mana -= 2;
-            }
-            else {
+            if(special){
+                mana-=2;
+            } else {
                 mana--;
             }
-            if (mana == 0.0) {
+            if(mana == 0){
                 return 0.0;
             }
         }
