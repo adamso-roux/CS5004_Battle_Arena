@@ -1,10 +1,12 @@
 import java.util.LinkedList;
 import java.lang.Math;
 
+
 public class BattleArena {
     LinkedList<CharacterInterface> heroes;
     LinkedList<CharacterInterface> badguys;
     LinkedList<Weapon> weaponRack;
+    CharacterInterface winner;
 
     public BattleArena(LinkedList<CharacterInterface> heroes,
                        LinkedList<CharacterInterface> badguys,
@@ -20,10 +22,37 @@ public class BattleArena {
 
     public void AnnounceContestants(){
         //loops through the contestants in the arena.
+
+        System.out.println("******ANNOUNCING OUR HEROES******");
+        int count = 1;
+        for(CharacterInterface C : this.heroes){
+            System.out.println(String.format("Contestant #%d:", count++));
+            System.out.println(C);
+        }
+
+        System.out.println("******ANNOUNCING OUR BAD GUYS******");
+        System.out.println("(boos from the crowd)");
+        count = 1;
+        for(CharacterInterface C : this.badguys){
+            System.out.println(String.format("Contestant #%d:", count++));
+            System.out.println(C);
+        }
+
+        System.out.println("******AVAILABLE WEAPONS FOR OUR HEROES*****");
+        for(Weapon W : this.weaponRack){
+            System.out.println(W);
+        }
+
+
     }
 
     public void AnnounceWinner(){
         //displays the winner and their weapon, fireworks, boom.
+        System.out.println("\n\nAND THE WINNER IS: ");
+        System.out.println("(rumbling)");
+
+        System.out.println(this.winner);
+
     }
     public double getRandomAttack(CharacterInterface contestant) {
 
@@ -43,3 +72,4 @@ public class BattleArena {
 
 
 }
+
