@@ -33,7 +33,32 @@ public class BattleArena {
         if(result == 1){this.badguys.remove(badguy_index);}
 
         //rest the health of the player who is still alive:
-
+        System.out.println("FIGHT");
+    	Random rand = new Random();
+    	 
+    	Character c1 = heroes.getFirst();
+    	Character c2 = badguys.getFirst();
+         
+         double damagec1 = (double) rand.nextInt((int) c1.getStrength());
+         double damagec2 = (double) rand.nextInt((int) c2.getStrength());
+         
+         
+         while(c1.isAlive()  && c2.isAlive())
+         {	
+         	 System.out.println(c1.getName() + " Strength: " + c1.getHitPoints() + " " + c2.getName() + " Strength: " + c2.getHitPoints());
+             System.out.println(c1.getName() + " Attacks " + c2.getName());
+             c2.takeDamage(damagec2);
+             System.out.println(c1.getName() + " Strength: " + c1.getHitPoints() + " " + c2.getName() + " Strength: " + c2.getHitPoints());
+             System.out.println(c2.getName() + " Attacks " + c1.getName());
+             c1.takeDamage(damagec1); 
+             
+             if(c1.isAlive() == false) {
+             	System.out.println(c2.getName() + " Wins");
+             }
+             
+             if(c2.isAlive() == false) {
+             	System.out.println(c1.getName() + " Wins");
+             }
 
 
     }
