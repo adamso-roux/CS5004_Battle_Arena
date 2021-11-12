@@ -46,8 +46,10 @@ public class Hero extends Character{
      * @param special indicates that the attack has been made with a weapon
      * @return the attack with a weapon
      */
+    
     public double attack(boolean special) {
         if(this.weapon.getDurability() <= 0){
+        	//System.out.println("does this ever print" + this.attack());
             return this.attack();
         }
         if (weapon instanceof Magic) {
@@ -60,7 +62,8 @@ public class Hero extends Character{
                 return 0.0;
             }
         }
-        return this.weapon.attack(special);
+        //System.out.println(this.weapon.attack() + "this is where i should look");
+        return  this.weapon.attack();//this.weapon.attack(special);
     }
 
     public void revive(){

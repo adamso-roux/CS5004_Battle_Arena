@@ -63,11 +63,12 @@ public class Character implements CharacterInterface {
      * Determine the attack power of a character
      * @return a random double based on the character's strength
      */
-    @Override
+    //@Override
+    
     public double attack() {
         return (double)((Math.random() * (strength - 1)) + 1);
     }
-
+	
     /**
      * Decrement the hitPoints based on the attack power
      */

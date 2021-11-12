@@ -69,7 +69,8 @@ public class BattleArena {
             boolean special = rand.nextBoolean();
 
             System.out.println(c1.getName() + " Attacks " + c2.getName());
-
+            //System.out.println(special);
+        
             c2.takeDamage(c1.attack(special));
 
             System.out.println(c2.getName() + " Attacks " + c1.getName());
