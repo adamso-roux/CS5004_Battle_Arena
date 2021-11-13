@@ -1,6 +1,10 @@
 import java.util.LinkedList;
+import java.io.File;
+import java.io.IOException;
 import java.lang.Math;
 import java.util.Random;
+// new stuff
+
 
 
 public class BattleArena {
@@ -88,11 +92,16 @@ public class BattleArena {
             System.out.println(c1.getName() + " is at " + c1.getHitPoints());
             System.out.println(c2.getName() + " is at " + c2.getHitPoints());
         }
-        if(!this.heroes.get(hero_index).isAlive()) return 0;
-
-        else return 1;
-
+        if(!this.heroes.get(hero_index).isAlive()) {   	
+        	  	return 1;
+        }else {
+        return 0;
     }
+    }
+		
+       
+
+
 
     public void AnnounceContestants(){
         //loops through the contestants in the arena.
