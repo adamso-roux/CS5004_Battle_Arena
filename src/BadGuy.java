@@ -24,7 +24,7 @@ public class BadGuy extends Character{
     }
 
     public double attack() {
-        System.out.println(this.phrase[(int)(Math.random() * (4 - 0) + 0)]);
+        System.out.println(this.getName() + ": " + this.phrase[(int)(Math.random() * (4 - 0) + 0)]);
         return (double)((Math.random() * 3 * (super.getStrength() - 1)) + 1);
     }
 
