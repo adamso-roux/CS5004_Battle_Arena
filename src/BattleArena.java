@@ -6,6 +6,8 @@
  * set up to have characters from each bad guy and hero team fight against
  * each other one vs one until all of one team's characters are not alive
  * 
+ * Author: Oliver Adams
+ * Revised by: Kris Barnes
  */
 
 
