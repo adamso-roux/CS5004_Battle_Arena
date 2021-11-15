@@ -1,6 +1,7 @@
 /**
  * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
  * Magic Class to create a Magic Weapon for a Hero object
+ * Author: Derek Muse
  */
 
 import java.util.Random;
