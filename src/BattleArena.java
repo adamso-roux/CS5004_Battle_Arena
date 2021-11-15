@@ -47,6 +47,7 @@ public class BattleArena {
 
             int badguy_index = rand.nextInt(this.badguys.size());//(int)Math.floor(Math.random() * this.heroes.size());
 
+            delay(1500);
             System.out.println("\nBEGIN ROUND " + round_number++);
             int result = one_v_one_FIGHT(hero_index, badguy_index);
 
@@ -80,28 +81,33 @@ public class BattleArena {
 
 
         while(c1.isAlive()  && c2.isAlive()) {
-
+            System.out.println("");
+            delay(1500);
             boolean special = rand.nextBoolean();
 
-            System.out.println(c1.getName() + " Attacks " + c2.getName());
+            System.out.println("*"+c1.getName() + " Attacks " + c2.getName()+"*");
             //System.out.println(special);
         
             c2.takeDamage(c1.attack(special));
 
-            System.out.println(c2.getName() + " Attacks " + c1.getName());
+            System.out.println("*"+c2.getName() + " Attacks " + c1.getName()+"*");
             c1.takeDamage(c2.attack());
 
 
             if (c1.isAlive() == false) {
-                System.out.println(c2.getName() + " Wins");
+                System.out.println(c2.getName() + " Wins this round!");
             }
 
             if (c2.isAlive() == false) {
-                System.out.println(c1.getName() + " Wins");
+                System.out.println(c1.getName() + " Wins this round!");
             }
 
-            System.out.println(c1.getName() + " is at " + c1.getHitPoints());
-            System.out.println(c2.getName() + " is at " + c2.getHitPoints());
+            System.out.print(c1.getName() + " is at ");
+            System.out.printf("%.2f\n", c1.getHitPoints());
+
+            System.out.print(c2.getName() + " is at ");
+            System.out.printf("%.2f\n", c2.getHitPoints());
+
         }
         if(!this.heroes.get(hero_index).isAlive()) { 
         	this.winner = (CharacterInterface) this.heroes.get(hero_index);
@@ -111,10 +117,6 @@ public class BattleArena {
         return 0;
     }
     }
-		
-       
-
-
 
     public void AnnounceContestants(){
         //loops through the contestants in the arena.
@@ -141,10 +143,22 @@ public class BattleArena {
 
     }
 
+    public void delay(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
     public void AnnounceWinner(){
         //displays the winner and their weapon, fireworks, boom.
         System.out.println("\n\nAND THE WINNER IS: ");
+        delay(1000);
         System.out.println("(rumbling)");
+        delay(1000);
+        System.out.println("...");
+        delay(1000);
+        System.out.println("...");
 
         if(this.heroes.size() == 0) {
         	System.out.println("The Bad Guys!") ;
