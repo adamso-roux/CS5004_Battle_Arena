@@ -1,3 +1,14 @@
+/**
+ * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
+ * 
+ * BattleArena class that makes use of our hero, badguy and weapon objects 
+ * This class is implemented in the Arena Driver and its fight method is
+ * set up to have characters from each bad guy and hero team fight against
+ * each other one vs one until all of one team's characters are not alive
+ * 
+ */
+
+
 import java.util.LinkedList;
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +48,7 @@ public class BattleArena {
             int badguy_index = rand.nextInt(this.badguys.size());//(int)Math.floor(Math.random() * this.heroes.size());
 
             System.out.println("\nBEGIN ROUND " + round_number++);
-            int result = two_v_two_FIGHT(hero_index, badguy_index);
+            int result = one_v_one_FIGHT(hero_index, badguy_index);
 
             //the result is the index of the player who lost:
             if (result == 1) {
@@ -52,7 +63,7 @@ public class BattleArena {
 
     }
 
-    public int two_v_two_FIGHT(int hero_index, int badguy_index){
+    public int one_v_one_FIGHT(int hero_index, int badguy_index){
 
 
         Random rand = new Random();
@@ -96,7 +107,7 @@ public class BattleArena {
         	this.winner = (CharacterInterface) this.heroes.get(hero_index);
         	  	return 1;
         }else {
-        	this.winner = (CharacterInterface) this.heroes.get(hero_index);
+        	this.winner = (CharacterInterface) this.badguys.get(badguy_index);
         return 0;
     }
     }
@@ -135,25 +146,15 @@ public class BattleArena {
         System.out.println("\n\nAND THE WINNER IS: ");
         System.out.println("(rumbling)");
 
-        System.out.println(this.winner);
+        if(this.winner instanceof BadGuy) {
+        	System.out.println("The Bad Guys!") ;
+        }
+        else {
+        	System.out.println("The Good Guys!");
+        }
 
     }
-//    public double getRandomAttack(Character contestant) {
-//
-//        if (contestant instanceof BadGuy) {
-//            //attack function call for the badguy
-//        }
-//
-//
-//        if (contestant instanceof Hero) {
-//            //hand of god roll:
-//            int handofgod = (int) Math.floor(Math.random() * 100) % 2;
-//
-//            //attack function call for the hero
-//
-//        }
-//        return 0d;
-//    }
+
 
 
 }

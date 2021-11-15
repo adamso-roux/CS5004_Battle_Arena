@@ -1,3 +1,12 @@
+/**
+ * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
+ * 
+ * Driver that makes use of our BattleArena object to stage a battle
+ * between a team of heroes and bad guys 
+ *
+ */
+
+
 import java.util.LinkedList;
 //// New Stuff For File
 import java.awt.Color;
@@ -43,7 +52,6 @@ public class ArenaDriver {
        /*
     	LinkedList<Hero>  heroes = new LinkedList<Hero>();
         LinkedList<BadGuy>  badguys = new LinkedList<BadGuy>();
-
         //Populate our rack of weapons:
         LinkedList<Weapon> weaponRack = ArenaDriver.getWeaponRack();
         BadGuy oliver = new BadGuy("Oliver", 100, 10);
@@ -51,15 +59,12 @@ public class ArenaDriver {
         Hero kris = new Hero("Kris Barnes", 100, 50, 10);
         BadGuy derek = new BadGuy("Derek", 100, 10);
         Hero bailee = new Hero("Bailee", 100, 99, 99);
-
         //add some contestants:
         heroes.add(drG);
         heroes.add(kris);
         heroes.add(bailee);
-
         badguys.add(oliver);
         badguys.add(derek);
-
         //The basic structure of the Arena function calls:
         BattleArena ThunderDome = new BattleArena(heroes, badguys, weaponRack);
         ThunderDome.AnnounceContestants();
@@ -103,7 +108,7 @@ public ArenaDriver(){
 		window.setVisible(true);
 			
         // Type your audio file name in the res folder
-		clickSound = ".//res//mixkit-long-game-over-notification-276.wav";
+		clickSound = System.getProperty("user.dir")+"/src/mixkit-long-game-over-notification-276.wav";
 		
 
 
@@ -146,10 +151,10 @@ public ArenaDriver(){
 
 	        //Populate our rack of weapons:
 	        LinkedList<Weapon> weaponRack = ArenaDriver.getWeaponRack();
-	        BadGuy oliver = new BadGuy("Oliver", 100, 10);
+	        BadGuy oliver = new BadGuy("Oliver", 150, 10);
 	        Hero drG = new Hero("Dr.G", 100, 100, 10);
 	        Hero kris = new Hero("Kris Barnes", 100, 50, 10);
-	        BadGuy derek = new BadGuy("Derek", 100, 10);
+	        BadGuy derek = new BadGuy("Derek", 150, 10);
 	        Hero bailee = new Hero("Bailee", 100, 99, 99);
 
 	        //add some contestants:
@@ -170,7 +175,3 @@ public ArenaDriver(){
 	}
 
 }
-
-
-
-

@@ -89,4 +89,3 @@ public class Character implements CharacterInterface {
         this.strength = 25;
     }
 }
-

@@ -71,4 +71,3 @@ public class Hero extends Character{
         this.mana = 10;
     }
 }
-

@@ -1,3 +1,13 @@
+/**
+ * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
+ * A bad guy is a character who says a catch phrase when attacking
+ *
+ * Author: Bailee Bartash
+ * Date: 11/4/21
+ * Revised: 11/10/21
+ */
+
+   
 public class BadGuy extends Character{
 
     private String[] phrase = {
@@ -15,7 +25,7 @@ public class BadGuy extends Character{
 
     public double attack() {
         System.out.println(this.phrase[(int)(Math.random() * (4 - 0) + 0)]);
-        return (double)((Math.random() * (super.getStrength() - 1)) + 1);
+        return (double)((Math.random() * 5 * (super.getStrength() - 1)) + 1);
     }
 
 
