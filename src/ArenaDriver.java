@@ -1,6 +1,9 @@
 /**
  * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
  * 
+ * Author: Kris Barnes
+ * Date: 11/13/21
+ * 
  * Driver that makes use of our BattleArena object to stage a battle
  * between a team of heroes and bad guys 
  *
