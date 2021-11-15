@@ -146,7 +146,7 @@ public class BattleArena {
         System.out.println("\n\nAND THE WINNER IS: ");
         System.out.println("(rumbling)");
 
-        if(this.winner instanceof BadGuy) {
+        if(this.heroes.size() == 0) {
         	System.out.println("The Bad Guys!") ;
         }
         else {
