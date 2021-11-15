@@ -92,9 +92,11 @@ public class BattleArena {
             System.out.println(c1.getName() + " is at " + c1.getHitPoints());
             System.out.println(c2.getName() + " is at " + c2.getHitPoints());
         }
-        if(!this.heroes.get(hero_index).isAlive()) {   	
+        if(!this.heroes.get(hero_index).isAlive()) { 
+        	this.winner = (CharacterInterface) this.heroes.get(hero_index);
         	  	return 1;
         }else {
+        	this.winner = (CharacterInterface) this.heroes.get(hero_index);
         return 0;
     }
     }

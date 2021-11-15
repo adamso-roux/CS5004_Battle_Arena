@@ -17,6 +17,9 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
+
+
+// Code for the button and sound were adapted from https://www.youtube.com/watch?v=qPVkRtuf9CQ&t=238s
 public class ArenaDriver {
 	//// For the window
 	//// take this out if it doesn't work
@@ -27,8 +30,6 @@ public class ArenaDriver {
 	String clickSound;
 	ButtonHandler bHandler = new ButtonHandler();
 	SoundEffect se = new SoundEffect();
-	
-	
 	//////////////////////////
 	
 	
@@ -36,6 +37,8 @@ public class ArenaDriver {
     public static void main(String[] args){
     	
     	new ArenaDriver();
+    	// Remove comments if you want the fighting to take place independent of the button
+    	// See below to 
         //Create our list of heroes and bad guys:
        /*
     	LinkedList<Hero>  heroes = new LinkedList<Hero>();
@@ -76,7 +79,7 @@ public class ArenaDriver {
 
         return weaponRack;
     }
-    ///////////
+    
 public ArenaDriver(){
 		
 		window = new JFrame();
@@ -101,7 +104,7 @@ public ArenaDriver(){
 			
         // Type your audio file name in the res folder
 		clickSound = ".//res//mixkit-long-game-over-notification-276.wav";
-		// what if i put verything here
+		
 
 
 	}
@@ -137,6 +140,7 @@ public ArenaDriver(){
 			
 			se.setFile(clickSound);
 			se.play();
+			////Can be added back to the original driver but this works for the button to start play
 			LinkedList<Hero>  heroes = new LinkedList<Hero>();
 	        LinkedList<BadGuy>  badguys = new LinkedList<BadGuy>();
 
