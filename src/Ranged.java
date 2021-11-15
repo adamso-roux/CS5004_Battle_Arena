@@ -1,6 +1,7 @@
 /**
  * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
  * Ranged Class to create a Ranged Weapon for a Hero object
+ * Author: Derek Muse
  */
 
 import java.util.Random;
