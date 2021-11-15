@@ -35,20 +35,23 @@ public class BattleArena {
 
     public void FIGHT(){
 
-        //LOOP WHILE size of heroes or badguys is greater than 0:
-
+        //Store the number of rounds so we can announce the round number at
+        //the beginning of each one v one battle:
         int round_number = 0;
 
+        //iterate while the number of heroes and badguys is greater than zero
         while((this.heroes.size() > 0) && (this.badguys.size() > 0)) {
 
             Random rand = new Random();
 
-            int hero_index = rand.nextInt(this.heroes.size());//(int)Math.floor(Math.random() * this.heroes.size());
-
-            int badguy_index = rand.nextInt(this.badguys.size());//(int)Math.floor(Math.random() * this.heroes.size());
+            //grab contestants at random:
+            int hero_index = rand.nextInt(this.heroes.size());
+            int badguy_index = rand.nextInt(this.badguys.size());
 
             delay(1500);
             System.out.println("\nBEGIN ROUND " + round_number++);
+            //fight these two characters, the result will indicate while
+            //character wins:
             int result = one_v_one_FIGHT(hero_index, badguy_index);
 
             //the result is the index of the player who lost:
@@ -63,10 +66,9 @@ public class BattleArena {
         }
 
     }
-
+    
+    //Takes two integers representing our hero and bad buy
     public int one_v_one_FIGHT(int hero_index, int badguy_index){
-
-
         Random rand = new Random();
 
         Hero c1 = heroes.get(hero_index);
@@ -119,7 +121,8 @@ public class BattleArena {
     }
 
     public void AnnounceContestants(){
-        //loops through the contestants in the arena.
+        //loops through the contestants in the arena, displaying information about 
+        //the contestants and available weapons:
 
         System.out.println("******ANNOUNCING OUR HEROES******");
         int count = 1;
@@ -143,6 +146,7 @@ public class BattleArena {
 
     }
 
+    //A simple delay wrapper so that the ouput of the battle is not light-speed
     public void delay(int millis){
         try {
             Thread.sleep(millis);
@@ -150,6 +154,8 @@ public class BattleArena {
             e.printStackTrace();
         }
     }
+    
+    //Dramatically announces the winning side of the Arena
     public void AnnounceWinner(){
         //displays the winner and their weapon, fireworks, boom.
         System.out.println("\n\nAND THE WINNER IS: ");
