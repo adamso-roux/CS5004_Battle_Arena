@@ -2,6 +2,7 @@
  * Group: Oliver Adams, Bailee Bartash, Kriston Barnes, Derek Muse
  * Abstract Weapon Class to reduce the reuse of code in each of the
  * three Weapon child classes.
+ * Author: Derek Muse
  */
 
 public abstract class Weapon {
